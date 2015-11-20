@@ -19,9 +19,6 @@ class JsonParser(object):
     """
     Json Parser
     """
-    def __init__(self):
-        self.line = 0
-        self.col = 0
 
     def parse(self, json):
         """ Parses a JSON string. """
@@ -94,7 +91,13 @@ class JsonParser(object):
 
 def main():
     """ Main loop """
-    print JsonParser().parse("".join([line for line in sys.stdin]))
+    if sys.stdin.isatty():
+        print "INPUT: [Ctrl-D when done]"
+    obj = JsonParser().parse("".join([line for line in sys.stdin]))
+    if sys.stdin.isatty():
+        print ""
+        print "OUTPUT:"
+    print obj
 
 if __name__ == '__main__':
     main()
