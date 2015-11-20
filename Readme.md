@@ -20,7 +20,7 @@
       3,
       4,
       "hello"
-    ],
+  ],
   b: 5
 }
 {'arr': [1, 2, 3, 4, 'hello'], 'b': 5}
@@ -28,6 +28,7 @@
 
 ## TODO:
 1. Fix object keys. The keys should be quoted strings according to the RFC.
+2. Strings with spaces don't work yet.
 
 
 https://tools.ietf.org/html/rfc7159#section-2
